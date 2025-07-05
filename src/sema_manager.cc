@@ -352,7 +352,7 @@ void buildPreamble(Session &session, CompilerInvocation &ci, IntrusiveRefCntPtr<
 #if LLVM_VERSION_MAJOR >= 20
       *fs,
 #endif
-      &ci.getDiagnosticOpts(), &dc, false);
+      ci.getDiagnosticOpts(), &dc, false);
   if (oldP) {
     std::lock_guard lock(session.wfiles->mutex);
     for (auto &include : oldP->includes)

@@ -120,7 +120,7 @@ std::unique_ptr<CompilerInvocation> buildCompilerInvocation(const std::string &m
 #if LLVM_VERSION_MAJOR >= 20
       *vfs,
 #endif
-      new DiagnosticOptions, new IgnoringDiagConsumer, true));
+      *new DiagnosticOptions, new IgnoringDiagConsumer, true));
 #if LLVM_VERSION_MAJOR < 12 // llvmorg-12-init-5498-g257b29715bb
   driver::Driver d(args[0], llvm::sys::getDefaultTargetTriple(), *diags, vfs);
 #else
